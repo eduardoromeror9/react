@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import Error from './Error';
 
 
-const Formulario = ({ pacientes,setPacientes }) => {
+const Formulario = ({ pacientes, setPacientes, paciente }) => {
+
 
   const [ nombre, setNombre ]               = useState('');
   const [ dueno,  setDueno ]                 = useState('');
@@ -11,6 +12,19 @@ const Formulario = ({ pacientes,setPacientes }) => {
   const [ observaciones, setObservaciones ] = useState('');
 
   const [ error, setError ] = useState(false);
+
+  useEffect( () => {
+    if(Object.keys(paciente).length > 0) {
+      setNombre(paciente.nombre)
+      setDueno(paciente.dueno)
+      setEmail(paciente.email)
+      setFecha(paciente.fecha)
+      setObservaciones(paciente.observaciones)
+    }
+  }, [paciente]);
+
+
+
 
   // Generar ID aleatorio
   const generarId = () => {
