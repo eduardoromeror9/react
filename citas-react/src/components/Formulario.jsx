@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import Error from './Error';
 
 
-const Formulario = ({ pacientes, setPacientes, paciente }) => {
+const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
 
-  const [ nombre, setNombre ]               = useState('');
-  const [ dueno,  setDueno ]                 = useState('');
-  const [ email,  setEmail ]                 = useState('');
-  const [ fecha,  setFecha ]                 = useState('');
+  const [ nombre, setNombre ] = useState('');
+  const [ dueno,  setDueno ]  = useState('');
+  const [ email,  setEmail ]  = useState('');
+  const [ fecha,  setFecha ]  = useState('');
   const [ observaciones, setObservaciones ] = useState('');
 
   const [ error, setError ] = useState(false);
@@ -22,8 +22,6 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
       setObservaciones(paciente.observaciones)
     }
   }, [paciente]);
-
-
 
 
   // Generar ID aleatorio
@@ -56,14 +54,22 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
       dueno,
       email,
       fecha,
-      observaciones,
-      id: generarId()
+      observaciones
     }
 
-    // console.log(objetoPaciente);
+    if (paciente.id) {
+      // Editar paciente
+      objetoPaciente.id = paciente.id;
+      const pacientesActualizados = pacientes.map(pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
 
+      setPacientes(pacientesActualizados)
+      setPaciente({})
+
+    } else {
     // Crear el paciente
+    objetoPaciente.id = generarId();
     setPacientes([ ...pacientes, objetoPaciente ]);
+    }
 
 
     // Reiniciar el formulario
@@ -164,7 +170,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
         <input 
           type="submit"
           className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold p-3 px-4 rounded-lg cursor-pointer"
-          value="Agregar Paciente"
+          value={paciente.id ? 'Editar Paciente' : 'Agregar Paciente'}
         />
 
       </form>
