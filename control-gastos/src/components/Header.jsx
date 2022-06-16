@@ -1,7 +1,6 @@
 import React from 'react'
-import NuevoPresupuesto from './NuevoPresupuesto';
-import ControlPresupuesto from './ControlPresupuesto';
-
+import NuevoPresupuesto from './NuevoPresupuesto'
+import ControlPresupuesto from './ControlPresupuesto'
 
 
 const Header = ({
@@ -26,7 +25,7 @@ const Header = ({
         />
       )}
     </header>
-  );
-};
+  )
+}
 
 export default Header
