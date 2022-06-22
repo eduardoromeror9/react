@@ -58,6 +58,7 @@ function App() {
         setResultado({})
         const { moneda, criptomonedas } = monedas
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomonedas}&tsyms=${moneda}`
+        // const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD`
 
         const respuesta = await fetch( url )
         const resultado = await respuesta.json()
