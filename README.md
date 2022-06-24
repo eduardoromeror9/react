@@ -4,6 +4,9 @@ Ejecutar `npm install` en el directorio raíz del proyecto para instalar los paq
 
 Ejecutar `npm run dev` para iniciar el servidor.
 
+Ejecutar `json-server  --watch  db.json --port 4000` para iniciar BD
+
+
 
 # Citas Veterinarias
 <https://wonderful-souffle-41b2c1.netlify.app/>
