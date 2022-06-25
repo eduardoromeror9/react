@@ -1,36 +1,3 @@
 {
-  "clientes": [
-    {
-      "nombre": "Eduardo",
-      "empresa": "Facebook",
-      "email": "edu@edua.com",
-      "telefono": "3939038",
-      "notas": "Esperando datos",
-      "id": 1
-    },
-    {
-      "nombre": "Hector",
-      "empresa": "Apple",
-      "email": "hector@hector.com",
-      "telefono": "33833092",
-      "notas": "Ingeniero de Datos",
-      "id": 2
-    },
-    {
-      "nombre": "Miguel Eduardo",
-      "empresa": "Microsoft",
-      "email": "miguel@miguel.com",
-      "telefono": "3283637",
-      "notas": "Esta aprendiendo a diseñar juegos ",
-      "id": 3
-    },
-    {
-      "nombre": "Caro",
-      "empresa": "Pide con gusto",
-      "email": "car@caro.com",
-      "telefono": "836982",
-      "notas": "Propietaria de Pide con Gusto",
-      "id": 4
-    }
-  ]
+  "clientes": []
 }
