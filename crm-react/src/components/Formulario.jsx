@@ -7,7 +7,6 @@ import Spinner from './Spinner';
 
 
 const Formulario = ({ cliente, cargando }) => {
-
   const navigate = useNavigate()
 
   const nuevoClienteSchema = Yup.object().shape({
@@ -31,8 +30,7 @@ const Formulario = ({ cliente, cargando }) => {
       if (cliente.id) {
         // Editando un registro
 
-        // const url = `${import.meta.env.VITE_API_URL}/${cliente.id}`;
-        const url = `http://localhost:4000/clientes/${cliente.id}`;
+        const url = `${import.meta.env.VITE_API_URL}/${cliente.id}`;
         respuesta = await fetch(url, {
           method: "PUT",
           body: JSON.stringify(values),
@@ -45,7 +43,7 @@ const Formulario = ({ cliente, cargando }) => {
         // Nuevo Registro
 
         // const url = import.meta.env.VITE_API_URL;
-        const url = `http://localhost:4000/clientes`;
+        const url = import.meta.env.VITE_API_URL;
         respuesta = await fetch(url, {
           method: "POST",
           body: JSON.stringify(values),
@@ -142,7 +140,6 @@ const Formulario = ({ cliente, cargando }) => {
             {errors.email && touched.email ? (
               <Alerta>{errors.email}</Alerta>
             ) : null}
-
           </div>
 
           <div className="mb-4">
@@ -184,7 +181,6 @@ const Formulario = ({ cliente, cargando }) => {
             value={cliente?.nombre ? 'Editar Cliente' : 'Agregar Cliente'}
             className="mt-5 w-full bg-blue-800 p-3 text-white uppercase font-bold text-lg rounded-lg cursor-pointer"
           />
-
         </Form>
       )}}
       </Formik>

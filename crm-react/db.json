@@ -1,0 +1,20 @@
+{
+  "clientes": [
+    {
+      "nombre": "Eduardo Romero",
+      "empresa": "Facebook",
+      "email": "edu@edu.com",
+      "telefono": "37328378473",
+      "notas": "Esperando los datos de la API",
+      "id": 1
+    },
+    {
+      "nombre": "dfsmd",
+      "empresa": "DKLNMSKLDM",
+      "email": "edu@eduardo.com",
+      "telefono": "3982309",
+      "notas": "enwerkfne",
+      "id": 2
+    }
+  ]
+}

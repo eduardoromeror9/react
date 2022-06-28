@@ -7,7 +7,6 @@ import EditarCliente from './paginas/EditarCliente';
 import VerCliente from './paginas/VerCliente';
 
 
-
 function App() {
 
   return (
@@ -18,9 +17,7 @@ function App() {
             <Route path="nuevo" element={ <NuevoCliente/> }/>
             <Route path="editar/:id" element={ <EditarCliente/> }/>
             <Route path=":id" element={<VerCliente />} />
-          </Route>
-
-        
+          </Route>       
       </Routes>
     </BrowserRouter>
   );
