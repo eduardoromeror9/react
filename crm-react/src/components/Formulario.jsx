@@ -27,21 +27,36 @@ const Formulario = ({ cliente, cargando }) => {
 
   const handleSubmit = async (values) => {
     try {
-      const url = 'http://localhost:4000/clientes';
+      let respuesta
+      if (cliente.id) {
+        // Editando un registro
 
-      const respuesta = await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(values),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+        // const url = `${import.meta.env.VITE_API_URL}/${cliente.id}`;
+        const url = `http://localhost:4000/clientes/${cliente.id}`;
+        respuesta = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
 
-      const resultado = await respuesta.json();
-      console.log(resultado);
+      } else {
+        // Nuevo Registro
 
-      navigate('/clientes')
+        // const url = import.meta.env.VITE_API_URL;
+        const url = `http://localhost:4000/clientes`;
+        respuesta = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+      }
 
+      await respuesta.json()
+      navigate("/clientes")
     } catch (error) {
       console.log(error)
     }
