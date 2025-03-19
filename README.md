@@ -17,4 +17,4 @@ Ejecutar `json-server  --watch  db.json --port 4000` para iniciar BD
 
 
 # Cotizador de Criptomonedas
-<https://chimerical-sorbet-bfe6bf.netlify.app/>
+<https://precioscriptos-edu.netlify.app/>
